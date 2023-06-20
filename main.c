@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 				}
 				k++;
 			}
-		i++;
+			i++;
 		}
 		cmd[j] = '\0';
 		if (strcmp(cmd, "push") == 0)
@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "L%d: unknown %s instruction %d\n", line_num, cmd, x);
 			exit(EXIT_FAILURE);
 		}
+		j = 0;
 		line_num++;
 	}
 	fclose(fp);
