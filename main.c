@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
 * main - the main func
@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
 		}
 		else if (strcmp(cmd, "pall") == 0)
 		{
+			printf("cheer\n");
 			pall(head);
 		}
 		else if (strcmp(cmd, "pop") == 0)
