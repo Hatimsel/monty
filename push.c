@@ -13,7 +13,7 @@ void push(stack_t **head, int a)
 
 	if (new_node == NULL)
 	{
-		write(1, "Error: malloc failed", 20);	
+		printf("Error: malloc failed");	
 		write(2, "Error: malloc failed", 20);
 		exit(EXIT_FAILURE);
 	}

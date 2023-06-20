@@ -19,5 +19,14 @@ void pop(stack_t **head)
 	{
 		curr = curr->next;
 	}
+	if (curr->prev != NULL)
+	{
+		curr->prev->next = NULL;
+		curr->prev = NULL;
+	}
+	else
+	{
+		*head = NULL;
+	}
 	free(curr);
 }

@@ -8,6 +8,7 @@
 
 #define MAX_LEN 100
 
+extern int line_num;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -44,5 +45,6 @@ void pall(stack_t **head);
 void pop(stack_t **head);
 void swap(stack_t **head);
 void add(stack_t **head);
+int pint(stack_t **head);
 
 #endif

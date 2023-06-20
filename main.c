@@ -5,35 +5,37 @@
 * @argc: arguments count
 * @argv: command line arguments
 */
+int line_num = 0;
 
 int main(int argc, char *argv[])
 {
 	stack_t **head = malloc(sizeof(stack_t));
 	FILE *fp;
 	char line[MAX_LEN], cmd[20];
-	int i, j, x;
+	int i = 0, j = 0, x = 0;
 
 	if (argc != 2)
 	{
-		write(1, "USAGE: monty file\n", 18);
+		printf("USAGE: monty file\n");
 		write(2, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
 	if (head == NULL)
 	{
-		write(1, "Error: malloc failed", 20);
+		printf("Error: malloc failed\n");
 		write(2, "Error: malloc failed", 20);
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		write(1, "Error: Can't open file <file>\n", 31);
+		printf("Error: Can't open file %s\n", argv[1]);
+		write(2, "Error: Can't open file <file>\n", 31);
 		exit(EXIT_FAILURE);
 	}
 	while (fgets(line, MAX_LEN, fp) != NULL)
 	{
-		while (line[i] != '\0')
+		while (line[i] != '\0' && line[i] != '\n')
 		{
 			if (line[i] >= 48 && line[i] <= 57)
 			{
@@ -66,7 +68,19 @@ int main(int argc, char *argv[])
 		{
 			swap(head);
 		}
+		else if (strcmp(cmd, "pint") == 0)
+		{
+			pint(head);
+		}
+		else
+		{
+			printf("L%d: unknown instruction %s\n", line_num, cmd);
+			exit(EXIT_FAILURE);
+		}
+		line_num++;
 	}
 	fclose(fp);
+	free(*head);
+	free(head);
 	return (0);
 }
