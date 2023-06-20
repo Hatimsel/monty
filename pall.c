@@ -19,9 +19,13 @@ void pall(stack_t **head)
 		curr = curr->next;
 	}
 
-	while (curr->prev != NULL)
+	/*while (curr->prev != NULL)
 	{
 		printf("%d\n", curr->n);
 		curr = curr->prev;
+	}*/
+	for (; curr != NULL; curr = curr->next)
+	{
+		printf("%d\n", curr->n);
 	}
 }

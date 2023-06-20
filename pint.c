@@ -15,6 +15,7 @@ int pint(stack_t **head)
 	if (*head == NULL)
 	{
 		printf("%d: can't pint, stack empty", line_num);
+		fprintf(stderr, "%d: can't pint, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 	while (curr->next != NULL)
@@ -22,5 +23,6 @@ int pint(stack_t **head)
 		curr = curr->next;
 	}
 	top = curr->n;
+	printf("%d\n", top);
 	return (top);
 }
