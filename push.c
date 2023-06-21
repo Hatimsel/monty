@@ -19,14 +19,13 @@ stack_t *push(stack_t **head, int a) {
     new_node->n = a;
     new_node->next = NULL;
     new_node->prev = NULL;
-    *head = new_node;
   }
   if (*head != NULL) {
     new_node->n = a;
     new_node->next = curr;
     curr->prev = new_node;
     new_node->prev = NULL;
-    *head = new_node;
   }
+  *head = new_node;
   return (*head);
 }

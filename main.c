@@ -44,10 +44,13 @@ int main(int argc, char *argv[]) {
       }
       if (strcmp(cmd, "push") == 0) {
         push(&head, x);
-        // printf("%s", cmd);
+        //  printf("%s", cmd);
         // printf("%d\n", x);
       } else if (strcmp(cmd, "pall") == 0) {
         pall(&head);
+        printf("%s", cmd);
+        printf("%d\n", x);
+
       } else if (strcmp(cmd, "pop") == 0) {
         pop(&head);
       }
@@ -63,6 +66,7 @@ int main(int argc, char *argv[]) {
 
     i = 0;
     j = 0;
+    memset(cmd, 0, sizeof(cmd));
     current_line++;
 
   } while (keep_reading);

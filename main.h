@@ -40,8 +40,8 @@ int main(int argc, char *argv[]);
 // void push(stack_t **head, int a);
 stack_t *push(stack_t **head, int a);
 void pall(stack_t **head);
-void pop(stack_t **head);
-void swap(stack_t **head);
+stack_t *pop(stack_t **head);
+stack_t *swap(stack_t **head);
 void add(stack_t **head);
 
 #endif

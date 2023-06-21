@@ -7,12 +7,10 @@
  */
 
 void pall(stack_t **head) {
-  if (*head == NULL) {
-    return;
-  }
+  stack_t *curr = *head;
 
-  while (*head != NULL) {
-    printf("%d\n", (*head)->n);
-    *head = (*head)->next;
+  while (curr != NULL) {
+    printf("%d\n", curr->n);
+    curr = curr->next;
   }
 }

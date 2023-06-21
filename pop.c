@@ -6,7 +6,7 @@
  * @head: a double pointer to the first element on the stack
  */
 
-void pop(stack_t **head) {
+stack_t *pop(stack_t **head) {
   stack_t *curr = *head;
 
   if (curr == NULL) {
@@ -16,4 +16,5 @@ void pop(stack_t **head) {
   *head = curr->next;
   (*head)->prev = NULL;
   free(curr);
+  return (*head);
 }
