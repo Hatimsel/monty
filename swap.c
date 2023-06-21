@@ -16,8 +16,8 @@ stack_t *swap(stack_t **head) {
     exit(EXIT_FAILURE);
   }
   tmp = curr->n;
-  curr->n = curr->prev->n;
-  curr->prev->n = tmp;
+  curr->n = curr->next->n;
+  curr->next->n = tmp;
 
   return (*head);
 }

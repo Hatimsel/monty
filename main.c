@@ -48,17 +48,16 @@ int main(int argc, char *argv[]) {
         // printf("%d\n", x);
       } else if (strcmp(cmd, "pall") == 0) {
         pall(&head);
-        printf("%s", cmd);
-        printf("%d\n", x);
+        // printf("%s", cmd);
+        // printf("%d\n", x);
 
       } else if (strcmp(cmd, "pop") == 0) {
         pop(&head);
-      }
-      /*else if (strcmp(cmd, "add") == 0) {
+      } else if (strcmp(cmd, "add") == 0) {
         add(&head);
       } else if (strcmp(cmd, "swap") == 0) {
         swap(&head);
-      }*/
+      }
 
       // printf("%s", cmd);
       // printf("%d\n", x);

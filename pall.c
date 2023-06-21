@@ -9,7 +9,7 @@
 void pall(stack_t **head) {
   stack_t *curr = *head;
 
-  while (curr != NULL) {
+  while (curr->next != NULL) {
     printf("%d\n", curr->n);
     curr = curr->next;
   }
