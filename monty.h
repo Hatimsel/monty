@@ -1,12 +1,16 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef _MONTY_H
+#define _MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdbool.h>
 
-#define MAX_LEN 100
+#define MAX_LINE 2048
+#define FILENAME_SIZE 1024
+
+extern int current_line;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,11 +41,11 @@ typedef struct instruction_s {
 } instruction_t;
 
 int main(int argc, char *argv[]);
-// void push(stack_t **head, int a);
 stack_t *push(stack_t **head, int a);
 void pall(stack_t **head);
 stack_t *pop(stack_t **head);
 stack_t *swap(stack_t **head);
 stack_t *add(stack_t **head);
+int pint(stack_t **head);
 
 #endif
