@@ -1,14 +1,13 @@
-#ifndef _MONTY_H
-#define _MONTY_H
+#ifndef _MAIN_H
+#define _MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <unistd.h>
 
 #define MAX_LEN 100
 
-extern int line_num;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -18,11 +17,10 @@ extern int line_num;
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
-typedef struct stack_s
-{
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+typedef struct stack_s {
+  int n;
+  struct stack_s *prev;
+  struct stack_s *next;
 } stack_t;
 
 /**
@@ -33,18 +31,17 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
-typedef struct instruction_s
-{
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+typedef struct instruction_s {
+  char *opcode;
+  void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 int main(int argc, char *argv[]);
-void push(stack_t **head, int a);
+// void push(stack_t **head, int a);
+stack_t *push(stack_t **head, int a);
 void pall(stack_t **head);
 void pop(stack_t **head);
 void swap(stack_t **head);
 void add(stack_t **head);
-int pint(stack_t **head);
 
 #endif

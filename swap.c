@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
 * swap - swaps the top two elements of the stack
@@ -24,8 +24,4 @@ void swap(stack_t **head)
 	tmp = curr->n;
 	curr->n = curr->prev->n;
 	curr->prev->n = tmp;
-	/*curr->next->prev = tmp;
-	tmp->prev = curr;
-	tmp->next = curr->next;
-	curr->next = tmp;*/
 }

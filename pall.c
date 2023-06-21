@@ -1,31 +1,18 @@
-#include "monty.h"
+#include "main.h"
 
 /**
-* pall - prints all the values on the stack
-*
-* @head: a double pointer to the head of a linked list
-*/
+ * pall - prints all the values on the stack
+ *
+ * @head: a double pointer to the head of a linked list
+ */
 
-void pall(stack_t **head)
-{
-	stack_t *curr = *head;
+void pall(stack_t **head) {
+  if (*head == NULL) {
+    return;
+  }
 
-	if (*head == NULL)
-	{
-		return;
-	}
-	while (curr->next != NULL)
-	{
-		curr = curr->next;
-	}
-
-	/*while (curr->prev != NULL)
-	{
-		printf("%d\n", curr->n);
-		curr = curr->prev;
-	}*/
-	for (; curr != NULL; curr = curr->next)
-	{
-		printf("%d\n", curr->n);
-	}
+  while (*head != NULL) {
+    printf("%d\n", (*head)->n);
+    *head = (*head)->next;
+  }
 }

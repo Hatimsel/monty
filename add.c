@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
 * add - adds the top two elements of the stack
@@ -21,6 +21,5 @@ void add(stack_t **head)
 		curr = curr->next;
 	}
 	curr->prev->n += curr->n;
-	curr->prev->next = NULL;
 	free(curr);
 }
