@@ -4,10 +4,10 @@
 * pint - prints the value at the top of the stack
 *
 * @head: a double pointer to the first element of a linked list
-* Return: returns 0
+* Return: void
 */
 
-int pint(stack_t **head)
+void pint(stack_t **head)
 {
 	stack_t *curr = *head;
 
@@ -16,6 +16,7 @@ int pint(stack_t **head)
 		fprintf(stderr, "%d: can't pint, stack empty\n", current_line);
 		exit(EXIT_FAILURE);
 	}
+	curr = *head;
+
 	printf("%d\n", curr->n);
-	return (0);
 }

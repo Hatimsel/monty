@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	{
 		if (buffer[i] >= 48 && buffer[i] <= 57)
 		{
-			x = buffer[i] - 48;
+			x = x * 10 + buffer[i] - 48;
 		}
 		else if (buffer[i] != ' ')
 		{
@@ -74,6 +74,10 @@ int main(int argc, char *argv[])
 	{
 		add(&head);
 	}
+	else if (strcmp(cmd, "sub") == 0)
+	{
+		sub(&head);
+	}
 	else if (strcmp(cmd, "swap") == 0)
 	{
 		swap(&head);
@@ -90,6 +94,7 @@ int main(int argc, char *argv[])
 	}
 	i = 0;
 	j = 0;
+	x = 0;
 	memset(cmd, 0, sizeof(cmd));
 	current_line++;
 	} while (keep_reading);
