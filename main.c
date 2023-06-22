@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	char *opcode;
 	instruction_t instruction_table[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {"add", add}, {"nop", nop}, {"#", nop},
+		{"swap", swap}, {"add", add}, {"nop", nop},
 		{"sub", sub}, {"div", div_op}, {"mul", mul}, {"mod", mod},
 		{"pchar", pchar}, {"pstr", pstr}, {"rotl", rotl},
 		{"rotr", rotr},
