@@ -4,6 +4,7 @@
  * pall - prints all the values on the stack
  *
  * @stack: a double pointer to the head of a linked list
+ * @line_number: The Line number of the opcode
  */
 void pall(stack_t **stack, unsigned int line_number)
 {

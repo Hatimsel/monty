@@ -2,7 +2,7 @@
 /**
  * push - adds a new element to the stack
  * @stack: Double pointer to the stack
- * @line_number - The Line number of the opcode
+ * @line_number: The Line number of the opcode
  */
 void push(stack_t **stack, unsigned int line_number)
 {
