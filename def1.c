@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	num = atoi(value);
 	if (*value < 48 || *value > 57)
-	{	
+	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
