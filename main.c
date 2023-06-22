@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
 	}
 
 	fclose(file);
-	free(stack);
+	_free(stack);
 	return (0);
 }
