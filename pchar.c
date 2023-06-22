@@ -16,10 +16,11 @@ void pchar(stack_t **stack, __attribute__((unused))unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	x = (*stack)->n;
-	if (x < 32 || x > 126)
+	if (x < 0 || x > 128)
 	{
 		printf("L%d: can't pchar, value out of range", line_number);
 		exit(EXIT_FAILURE);
 	}
 	putchar(x);
+	putchar('\n');
 }
