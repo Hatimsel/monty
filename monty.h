@@ -50,4 +50,6 @@ void process_instruction(char *opcode, stack_t **stack,
 void pchar(stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 void pstr(stack_t **stack, unsigned int line_number);
+
+void rotl(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
