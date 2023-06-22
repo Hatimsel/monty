@@ -8,22 +8,24 @@
 
 void pstr(stack_t **stack, unsigned int line_number)
 {
+	stack_t *curr = *stack;
 	int x = 0;
 
 	(void)line_number;
-	if (*stack == NULL)
+	if (curr == NULL)
 	{
 		putchar('\n');
+		return;
 	}
-	while (*stack != NULL)
+	while (curr != NULL)
 	{
-		x = (*stack)->n;
-		if (x < 32 || x > 126 || x == 0)
+		x = curr->n;
+		if (x < 32 || x > 126)
 		{
 			break;
 		}
 		putchar(x);
-		*stack = (*stack)->next;
+		curr = curr->next;
 	}
 	putchar('\n');
 }
