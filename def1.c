@@ -15,25 +15,29 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 	new_node = malloc(sizeof(stack_t));
 	num = atoi(value);
-	if (*value < 48 || *value > 57)
+	if (value[0] == '-' && isdigit(value[1]))
+	{
+		num = atoi(value);
+	}
+	else if (isdigit(value[0]))
+	{
+		num = atoi(value);
+	}
+	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
 	new_node->n = num;
 	new_node->prev = NULL;
 	new_node->next = *stack;
-
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
-
 	*stack = new_node;
 	}
 	else
