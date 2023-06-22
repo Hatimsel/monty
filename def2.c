@@ -2,7 +2,6 @@
 
 /**
  * pall - prints all the values on the stack
- *
  * @stack: a double pointer to the head of a linked list
  * @line_number: The Line number of the opcode
  */
@@ -69,7 +68,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	(void)line_number; /* Unused parameter */
 
-	if (stack == NULL || *stack == NULL ||(*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
@@ -77,8 +76,10 @@ void swap(stack_t **stack, unsigned int line_number)
 	num = (*stack)->n;
 	(*stack)->n = tmp->next->n;
 	tmp->next->n = num;
-	/*(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = temp;*/
+	/*
+	* (*stack)->n = (*stack)->next->n;
+	* (*stack)->next->n = temp;
+	*/
 }
 
 /**

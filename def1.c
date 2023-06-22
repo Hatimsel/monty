@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <ctype.h>
 /**
  * push - adds a new element to the stack
  * @stack: Double pointer to the stack
